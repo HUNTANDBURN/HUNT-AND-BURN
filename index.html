@@ -86,35 +86,32 @@
             transform: translateY(50px);
         }
 
-        .join-text {
-            font-size: 4.8em;
-            color: #ffffff;
-            margin: 50px 0;
-            text-decoration: none;
-        }
-
-        .big-button {
-            display: inline-block;
-            background-color: white;
-            color: #696969;
-            font-size: 2.4em;
-            padding: 20px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            margin-top: 50px;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
-
-        .big-button:hover {
-            background-color: #696969;
-            color: white;
-            transform: scale(1.15);
-        }
-
         footer {
             margin-top: 40px;
             font-size: 1.5em;
             color: #ffffff;
+        }
+
+        /* Presale Button */
+        .presale-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #696969;
+            font-size: 2.4em; /* Same as nav links */
+            padding: 20px 40px; /* Same padding as nav links */
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            z-index: 2000; /* Ensure the button is always on top */
+        }
+
+        .presale-button:hover {
+            background-color: #696969;
+            color: white;
+            transform: scale(1.15);
         }
     </style>
 </head>
@@ -139,15 +136,14 @@
         <div class="story">People became engrossed in hunting monsters to collect tokens. For them, hunting the monster was a fight for survival and a pursuit of economic benefit. Within this unique structure, they hunted monsters and sought new opportunities with the tokens they gathered.</div>
 
         <div class="story">However, this world was not so simple. The burned tokens would merge with other burned tokens to create new monsters, perpetuating a vicious cycle. People found themselves in a constant situation where they had to hunt monsters and collect tokens. Thus, the chaos continued, and people had to find new orders and methods of survival within it.</div>
-
-        <div class="join-text">Join the Presale</div>
     </div>
-
-    <a href="your-presale-link.html" class="big-button">Go to Presale Site</a>
 
     <footer>
         <p>&copy; 2024 HUNT AND BURN. All rights reserved.</p>
     </footer>
+
+    <!-- Presale Button -->
+    <a href="/presale" class="presale-button">Presale</a>
 
     <script>
         const title = document.querySelector('.hunt-and-burn-title');
