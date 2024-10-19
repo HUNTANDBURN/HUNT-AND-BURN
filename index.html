@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUNT AND BURN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #696969;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(105, 105, 105, 0.5);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.4em;
+            padding: 20px 40px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffffff;
+            color: #696969;
+            transform: scale(1.15);
+        }
+
+        .container {
+            padding: 20px;
+            margin-top: 100vh;
+        }
+
+        .hunt-and-burn-title {
+            font-size: 4.8em;
+            font-weight: bold;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translate(-50%, -150%);
+        }
+
+        .story {
+            font-size: 1.5em;
+            margin: 20px auto;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            transform: translateY(50px);
+        }
+
+        .join-text {
+            font-size: 4.8em;
+            color: #ffffff;
+            margin: 50px 0;
+            text-decoration: none;
+        }
+
+        .big-button {
+            display: inline-block;
+            background-color: white;
+            color: #696969;
+            font-size: 2.4em;
+            padding: 20px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .big-button:hover {
+            background-color: #696969;
+            color: white;
+            transform: scale(1.15);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">HUNT AND BURN</a></li>
+            <li><a href="/game">Game</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/docs">Docs</a></li>
+        </ul>
+    </nav>
+
+    <div class="hunt-and-burn-title">HUNT AND BURN</div>
+
+    <div class="container">
+        <div class="story">There was a man who created a monster based on tokens. This monster brought great chaos to the world, and people found themselves in a serious crisis because of it.</div>
+
+        <div class="story">The monster constantly inflicted damage on people, spreading confusion and fear. Cities turned to ruins, and people lost their daily lives. In such a situation, they had to eliminate the monster to survive. When the monster was killed, a part of the tokens that constituted it would be burned, but the remaining tokens would end up in the hands of the people. The tokens that entered the hands of the people gained value beyond mere currency. In this world, eliminating the monster became not just a matter of survival but also a crucial element closely tied to the economy.</div>
+
+        <div class="story">People became engrossed in hunting monsters to collect tokens. For them, hunting the monster was a fight for survival and a pursuit of economic benefit. Within this unique structure, they hunted monsters and sought new opportunities with the tokens they gathered.</div>
+
+        <div class="story">However, this world was not so simple. The burned tokens would merge with other burned tokens to create new monsters, perpetuating a vicious cycle. People found themselves in a constant situation where they had to hunt monsters and collect tokens. Thus, the chaos continued, and people had to find new orders and methods of survival within it.</div>
+
+        <div class="join-text">Join the Presale</div>
+    </div>
+
+    <a href="your-presale-link.html" class="big-button">Go to Presale Site</a>
+
+    <footer>
+        <p>&copy; 2024 HUNT AND BURN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const title = document.querySelector('.hunt-and-burn-title');
+        const stories = document.querySelectorAll('.story');
+
+        window.addEventListener('scroll', () => {
+            let scrollY = window.scrollY;
+            let windowHeight = window.innerHeight;
+
+            if (scrollY > windowHeight * 0.2) {
+                title.classList.add('hidden');
+            } else {
+                title.classList.remove('hidden');
+            }
+
+            stories.forEach((story) => {
+                let storyPosition = story.getBoundingClientRect().top;
+
+                if (storyPosition < windowHeight - 50) {
+                    story.style.opacity = 1;
+                    story.style.transform = 'translateY(0)';
+                } else {
+                    story.style.opacity = 0;
+                    story.style.transform = 'translateY(50px)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
